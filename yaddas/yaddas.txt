@@ -1,4 +1,4 @@
-﻿git init\ git log\git status\git add -A\ git mommit - m "coment" \ mkdir
+﻿git init\ git log\git status\git add -A\ git commit - m "comment" \ mkdir
 git checkout
 rm -     =delete
 
