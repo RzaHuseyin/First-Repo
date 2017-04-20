@@ -22,3 +22,38 @@ SELECT * FROM table-name WHERE column-name LIKE 'Se_en';     _ any (Seven, Seten
 SELECT * FROM table-name  WHERE column-name LIKE '%man%';       "a%" "%a"    "%a%"
 
 SELECT * FROM table-name WHERE column-name BETWEEN 'A' AND 'J';
+
+select * from table-name order by column-name desc;
+
+select * from table-name order by column-name asc limit 5;
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+SELECT COUNT(*) FROM table-name where id>15;
+			~ The fastest way to calculate the number of rows in a table is to use the COUNT() function.
+
+SELECT table-name, COUNT(*) FROM fake_apps GROUP BY table-name;  
+SELECT price, COUNT(*) FROM fake_apps WHERE downloads > 20000 GROUP BY price;
+        ~You can see that the result set is organized into two columns making it easy to see the number of apps at each column.
+
+SELECT SUM(column_name) FROM table_name;  
+ 		~ all sum (if type with integer)
+
+SELECT column_name2, SUM(column_name) FROM fake_apps GROUP BY column_name2;
+		~
+SELECT column_name1, column_name2 SUM(column_name3) FROM table_name GROUP BY column_name2;
+						~Calculate the total number of column_name3 for each column_name2.
+
+SELECT AVG(column_name) FROM table_name;
+						~ returns the average number of column_name for an app in our database
+
+
+
+
+
+
+
+
+
+
+
+
+
