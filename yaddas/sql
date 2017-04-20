@@ -9,3 +9,16 @@ ALTER TABLE - modifies a table
 DROP TABLE - deletes a table
 CREATE INDEX - creates an index (search key)
 DROP INDEX - deletes an index
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+DELETE FROM table_name WHERE column_name IS NULL;
+        is used to return unique values in the result set.
+        It filters out all duplicate values. Here, the result set lists each genre in the movies table exactly once.
+
+=  !=   >   <    >=     <=
+
+SELECT * FROM table-name WHERE column-name LIKE 'Se_en';     _ any (Seven, Seten, Selen)
+
+SELECT * FROM table-name  WHERE column-name LIKE '%man%';       "a%" "%a"    "%a%"
+
+SELECT * FROM table-name WHERE column-name BETWEEN 'A' AND 'J';
