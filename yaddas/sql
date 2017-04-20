@@ -46,14 +46,22 @@ SELECT AVG(column_name) FROM table_name;
 						~ returns the average number of column_name for an app in our database
 
 
+SELECT column_name2, AVG(column_name1) FROM table_name GROUP BY column_name2;  
+								~for column_name2   average number of column_name1
 
+SELECT column_name2, ROUND(AVG(column_name1),2) FROM table_name GROUP BY column_name2;
+							~if number is 65.684616   show 65.68
 
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+SELECT * FROM table_name1 WHERE table_name2_id = 3;
+SELECT * FROM table_name2 WHERE id = 3;
+				~~A foreign key is a column that contains the primary key of another table in the database. 
+				~~We use foreign keys and primary keys to connect rows in two different tables. 
 
+SELECT table_name1.column_name, table_name2.column_name, table_name2.column_name   FROM     table_name1,table_name2;
 
+ELECT  * FROM  albums JOIN artists ON albums.artist_id != artists.id; 
 
+SELECT * FROM  albums LEFT JOIN artists ON albums.artist_id = artists.id;
 
-
-
-
-
-
+SELECT tablename.columnname AS 'anyname',  tablename1.year,  tablename2.name AS 'anyname'FROM  tablename1 JOIN tablename2 ON  tablename1.column1_id =  tablename2.column1_id WHERE albums.year > 1980;
