@@ -85,8 +85,15 @@ One-to-Many
 `class roster` verilenlerbazsinda, bir müəllim 0 və daha çox klas öyrədə bilər,halbu ki bir sinif bir müəllim tərəfindən öyrədilir(və yalnız 1)
 `company` verilenlerbazsinda bir menecer bir və daha çox işçini idarə edə bilər, bir işçi bir menecer tərəfindən idarə olunur.
 `məhsul satışı` verilenlerbazsinda bir müştəri çox sifariş yerləşdirə bilər, halbu ki bir sifariş bir xüsusi müştəri tərəfindən yerləşdirilib.
-Bu növ əlaqə one-to-many kimi tanınır.
+Bu növ əlaqə one-to-many kimi tanınır. 
  
- This kind of relationship is known as one-to-many.
- 
+One-to-many əlaqəsi tək cədvəldə göstərilə bilmir.Məsələn, `class roster` verilənlərbazasında, biz Teachers adlanan 
+müəllimlər haqqında məlumat saxlanılan(name, office, phone və email kimi) cədvəllə başlamalıyıq. hər müəllim tərəfindən dərs deyilən
+sinifi yadaşa vermək, biz class1, class2, class3 sütunların yarada bilərik amma o an neçə sütun yaratmaq problemi ilə üzləşəcəyik.
+Digər yolla, əgər Classes adlanan sinif haqqında informasiyanı bölmünü (courseCode, dayOfWeek, timeStart and timeEnd) cədvəli ilə
+başlayırıqsa; biz əlavə müəllim haqqında informasiya bölmünü (name, office, phone and email kimi) saxladığmız sütunlar yarada bilərik.
+Bununla belə, bir müəllim çox sinifə dərs dediyindən , onun məlumatı Classes cədvəlində çox sətirdə bənzər olacaq. 
+
+
+However, since a teacher may teach many classes, its data would be duplicated in many rows in table Classes. 
  
