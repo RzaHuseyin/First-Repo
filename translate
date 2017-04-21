@@ -73,6 +73,20 @@ Ad unikla olmaya bilər. Telefon nömrəsi və adres dəyişə bilər. Bu səbə
 rəqəm yaratmaq daha yaxşıdır.
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 Step 3:CƏDVƏLLƏR ARASINDA ƏLAQƏNİN YARADILMASI
+Mütəqil və əlaqəsiz cədvəllərdən ibaərt verilənlərbazası çox az məqsədə xidmət eddir(bir elektrontablo əvəzində istifadə
+etdiynizi heasb edin). Relational (bağlı) verilənlərbazasının gücü cədvəllər arasındakı əlaqənin müəyyən edilə bilinməsindədir.
+Relational verilenlerbazasi yaradarkən ən önəmli aspekt cədvəllər arasında əlaqələrin müəyyən olunmasıdır. Əlaqə növlərinə daxildir:
+  1.one-to-many
+  2. many-to-many
+  3. one-to-one
+----------------------------------------------------------------------------------------------------------------------------------------
+One-to-Many
 
-
-
+`class roster` verilenlerbazsinda, bir müəllim 0 və daha çox klas öyrədə bilər,halbu ki bir sinif bir müəllim tərəfindən öyrədilir(və yalnız 1)
+`company` verilenlerbazsinda bir menecer bir və daha çox işçini idarə edə bilər, bir işçi bir menecer tərəfindən idarə olunur.
+`məhsul satışı` verilenlerbazsinda bir müştəri çox sifariş yerləşdirə bilər, halbu ki bir sifariş bir xüsusi müştəri tərəfindən yerləşdirilib.
+Bu növ əlaqə one-to-many kimi tanınır.
+ 
+ This kind of relationship is known as one-to-many.
+ 
+ 
