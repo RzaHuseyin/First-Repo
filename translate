@@ -30,11 +30,11 @@ Verilənlərbazası yaratilmasi bir çoxnuzun qərarlar verdiyi kimi  , elmden d
 Verilənlərbazası adətən müəyyən bir tətbiqə(app)  uyğun özəlləşdirilir.
 Heçbir özəlləşdirilmiş iki tətbiq eyni deyildir ve bu səbəbdən heçbir iki verilənlərbazası eyni deyildir.
 Guidelines-(adətən nə etmək əvəzinə nə etməmək müddətində) bu dizayn qərarı verməyə təqdim olundu, amma seçim nəticədə sizin üzərinizə düşür- dizayner
-
+))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))
 Step 1: VERİLƏNLƏRBAZASI (Tələb Analizi) MƏQSƏDİNİ MÜƏYYƏN EDİN
 Tələbləri toplamaq və verilənlərbazanızın məqsədini müəyyən etmək ..............
 Nümunə sadə giriş formaları, sorğular və hesabatların hazırlanması, daha çox kömək edir.
-
+((((((((((((((((((((((((((((((((((((((((((((((((((((((((((((((((((((((((((((((((((((((((((((((((((((((((((((((((((((((((((((((((((((((((
 Step 2: MƏLUMATLARI TOPLAMAQ, CƏSVƏLLƏRDƏ YERLƏŞDİRMƏK VƏ `PRİMARY KEY`ləri dəqiqləşdirmək.
 Verilənlərbazasının məqsədinə qərar verdikdən sonra, verilənlərbazasına saxlanılmağı tələb  olunan məlumatı toplamaq.
 Məlumatı mövzu-yerləşən cədvəllərdə bölmək.
@@ -55,6 +55,24 @@ Qərar doğru olmaya bilər amma primary key`in bu xüsusiyyətləri olmalıdır
 ```Primary key həmişə dəyər almalıdır. Başqa sözlə, NULL olmamalıdır.
 
 Primary key seçəndə aşağıdakıları nəzərdə tutmaq lazımdır:
-```
+```Primary key sadə və uyğun olmağı lazımdır, employeeİD employees cədvəli üçün və isbn kitab cədvəli üçün.
+```Primary key`in dəyəri dəyişməmlidir.Primary key digər cədvəllərə istinad etmək üçün istifadə olunur. Əgər onun dəyərini dəyişsən bütün
+istinadları dəyişməlisən; əks təqdirdə, istinadlar itiriləcək. Məsələn, phoneNumber`i Müştəri cədvəli üçün primary key kimi istifadə
+etmək uyğun olmayacaq, çünki dəyişə bilər.
+```Primary key daha çox integer (və ya number) tipi istifadə edir. Amma text kimi başqa tiblər də olab bilər. Həm də,effektivlik üçün 
+primary key kimi rəqəm tipli sütundan istifadə etmək ən yaxşısıdır. 
+```Primary key bir ixtiyari rəqəm ala bilər. Əksər RDBMS`lər integer primary key üçün (cari maksimum dəyər +1) yeni qeydə təyin edilən
+auto-increment(və ya AutoNumber tipi)deyilən tipi dəstəkləyir. Bu ixtiyari rəqəm əslində faktiki informasiya saxlamır. Telefon nömrəsi
+kimi  faktiki informasiyadan fərqli olaraq əslində primary key üçün  dəyişməyən nömrə idealdır.
+```Primary key adətən bir tək sütundur (custumerİD və ya productCode). Amma bir neçə sütundan edilə bilər. Mümkün olduqca az sütun
+istifadə etməliyik. 
+
+Bir misalla təsvir edək: bir müştərilər cədvəlinin saxladığı sütunları lastName, firstName, phoneNumber, address, city, state, zipCode.
+Primery key üçün  namizədlərin adıdır=(lastName, firstName), phoneNumber, Address1=(address, city, state), Address1=(address, zipCode).
+Ad unikla olmaya bilər. Telefon nömrəsi və adres dəyişə bilər. Bu səbəbdən,primary key kimi customerİD deyən əslində bir auto-increment
+rəqəm yaratmaq daha yaxşıdır.
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+Step 3:CƏDVƏLLƏR ARASINDA ƏLAQƏNİN YARADILMASI
+
 
 
