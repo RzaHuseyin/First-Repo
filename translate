@@ -1,0 +1,11 @@
+Elaqeli verlilenler dizaynina bir suretli-baslama dersliyi
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Giriş
+Relational verilənlər bazası 1969 ilde  (IBM Araşdırma) Edgar Codd tərəfindən irəli sürülmüşdür.
+Bu ildən etibarən (məsələn iyerarxik, şəbəkə və obyekt modelləri kimi digər verilənlər bazası modelləri ilə müqayisədə) kommersiya proqramları üçün dominant bazası modeline cevrilmisdir.
+Bu gün Oracle, IBM DB2 və Microsoft SQL Server kimi bir çox kommersiya Relational Database Management System (RDBMS) var.
+MySQL, mSQL (mini-SQL) və embedded Java DB (Apache Derby) kimi bir çox pulsuz və açıq mənbə RDBMS də var.
+Bir relational verilənlər bazası cədvəllərdə (və ya oxsarinda) melumat təşkil edir.
+Bir cədvəl sətır və sütunlardan meydana gəlir.
+Bir sıra (row)  da rekord (və ya tuple) adlandırılır.
+A row is also called a record (or tuple).
