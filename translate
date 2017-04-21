@@ -34,7 +34,16 @@ Guidelines-(adətən nə etmək əvəzinə nə etməmək müddətində) bu dizay
 Step 1: VERİLƏNLƏRBAZASI (Tələb Analizi) MƏQSƏDİNİ MÜƏYYƏN EDİN
 Tələbləri toplamaq və verilənlərbazanızın məqsədini müəyyən etmək ..............
 Nümunə sadə giriş formaları, sorğular və hesabatların hazırlanması, daha çox kömək edir.
-Drafting out the sample input forms, queries and reports, often helps.
+
+Step 2: MƏLUMATLARI TOPLAMAQ, CƏSVƏLLƏRDƏ YERLƏŞDİRMƏK VƏ `PRİMARY KEY`ləri dəqiqləşdirmək.
+Verilənlərbazasının məqsədinə qərar verdikdən sonra, verilənlərbazasına saxlanılmağı tələb  olunan məlumatı toplamaq.
+Məlumatı mövzu-yerləşən cədvəllərdə bölmək.
+Hər bir sətiri fərqli qeyd olunan primary key kimi adlanan bir sətiri( və ya çox sətirləri) seçmək.
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Primary Key
+
+
+
 
 
 
