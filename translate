@@ -31,6 +31,10 @@ Verilənlərbazası adətən müəyyən bir tətbiqə(app)  uyğun özəlləşdi
 Heçbir özəlləşdirilmiş iki tətbiq eyni deyildir ve bu səbəbdən heçbir iki verilənlərbazası eyni deyildir.
 Guidelines-(adətən nə etmək əvəzinə nə etməmək müddətində) bu dizayn qərarı verməyə təqdim olundu, amma seçim nəticədə sizin üzərinizə düşür- dizayner
 
+Step 1: VERİLƏNLƏRBAZASI (Tələb Analizi) MƏQSƏDİNİ MÜƏYYƏN EDİN
+Tələbləri toplamaq və verilənlərbazanızın məqsədini müəyyən etmək ..............
+Nümunə sadə giriş formaları, sorğular və hesabatların hazırlanması, daha çox kömək edir.
+Drafting out the sample input forms, queries and reports, often helps.
 
 
 
