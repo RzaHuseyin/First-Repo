@@ -95,5 +95,20 @@ başlayırıqsa; biz əlavə müəllim haqqında informasiya bölmünü (name, o
 Bununla belə, bir müəllim çox sinifə dərs dediyindən , onun məlumatı Classes cədvəlində çox sətirdə bənzər olacaq. 
 
 
-However, since a teacher may teach many classes, its data would be duplicated in many rows in table Classes. 
- 
+One-to-many əlaqəsi yolu kömək edir, bizim iki cədvəl qurmağa ehtiyacımız var: primary key kimi classİD ilə siniflər haqqında informasiya
+saxlayan bir Calsses cədvəli; primary key kimi teacherİD ilə müəllimlər haqqında informasiyanı saxlayan bir Teachers cədvəli.
+Aşağıda göstərildiyi kimmi Classes cədvəlində teacher cədvəlinin primary key saxlanılması ilə  one-to-many əlaqəsi yarada bilərik 
+
+                             +----------------+                             +----------------+
+                             | Teachers       |                             | Classes        |
+                             +----------------+   1                         +----------------+ 
+                             |  teacherID     |--|-|--+                     |  classID       |
+                             |  name          |       |                     |  courseCode    | 
+                             |  office        |       |                     |  day0fWeek     | 
+                             |  phone         |       |                     |  timeStart     |                    
+                             |  email         |       |             O..m   /|  timeend       | 
+                             |  .......       |       +-------------------O-|  teacherID     | 
+                             +----------------+                            \|  ...........   | 
+                                                                            +----------------+
+
+
