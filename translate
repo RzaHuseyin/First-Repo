@@ -1,6 +1,7 @@
 Elaqeli verlilenler dizaynina bir suretli-baslama dersliyi
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 Giriş
+
 Relational verilənlər bazası 1969 ilde  (IBM Araşdırma) Edgar Codd tərəfindən irəli sürülmüşdür.
 Bu ildən etibarən (məsələn iyerarxik, şəbəkə və obyekt modelləri kimi digər verilənlər bazası modelləri ilə müqayisədə) kommersiya proqramları üçün dominant bazası modeline cevrilmisdir.
 Bu gün Oracle, IBM DB2 və Microsoft SQL Server kimi bir çox kommersiya Relational Database Management System (RDBMS) var.
@@ -15,10 +16,18 @@ Bununla beraber, cədvəllər arasında yaradıla bilinen münasibətlər səmə
 seçilmiş məlumat almaq üçün bir relational verilənlər bazasına imkan yaradir.
 SQL (Structured Query Language) adlanan dil relational verilənlər bazası ilə işləmək üçün hazırlanmışdır.
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+VERILENLERBAZASI YARATMA MEQSEDI
 
+Bir yaxşı hazırlanmış verilənlər bazası aşağıdakıları etməlidir
+Melumatin çoxluğunun aradan qaldırılması:Melumatin eyni parçasi çox bir yerdə saxlanıla bilməz.
+Bunun sebebi, yinelenen melumatlar yalniz bos yaddasi tutmaqla deyil hem de asnliqla uyğunsuzluqlara sebeb olur.
+Melumat  bütövlüyü və dəqiqliyi təmini:
+[TODO] more
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+RELATIONAL VERILENLERBAZASI YARATMA PROSESI
 
-
-
+verilənlər bazası bir çoxnuzun qərarlar qəbul qebul etdiyiniz kimi  dizayn, elmden daha çox incəsənətdir.
+Database design is more art than science, as you have to make many decisions. 
 
 
 
