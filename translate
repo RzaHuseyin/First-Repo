@@ -41,10 +41,7 @@ Məlumatı mövzu-yerləşən cədvəllərdə bölmək.
 Hər bir sətiri fərqli qeyd olunan primary key kimi adlanan bir sətiri( və ya çox sətirləri) seçmək.
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 Primary Key
-
-
-
-
+Əlaqəli modeldə bir cədvəldə eyni sətirlər saxlnmaz, çünki bu axtarışda anlaşılmazlığa yaradır.
 
 
 
