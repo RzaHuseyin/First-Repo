@@ -42,6 +42,19 @@ Hər bir sətiri fərqli qeyd olunan primary key kimi adlanan bir sətiri( və y
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 Primary Key
 Əlaqəli modeldə bir cədvəldə eyni sətirlər saxlnmaz, çünki bu axtarışda anlaşılmazlığa yaradır.
+Unikallığı təmin etmək üçün hər bir cədvəldə, primary key adlandırılan ve cədvəlin bütün qeydlərini unikal(bənzərsiz) şəkildə 
+müəyyən edən bir sütun (və ya sütunların qurulması) olmalıdır.
+Məsələn, bir unikal müştəri-İD nömrəsi Müştəri cədvəli üçün primary key kimi istifadə oluna bilər; Məhsul cədvəli üçün məhsulKodu; Kitab cədvəli üçün isbn.
+Bir primary key tək sütundadırsa  simple key adlanır; əgər bir neçə sütuna verilibsə composite key adlandırılır.
+Primary key`də sürətli axtarışı və axtarışı asanaşdırmaq üçün əksəriyyət RDBMS`lər bir indeks qurur. 
+Primary key həm də digər cədvəllərə müraciət etməyə istifadə olunur (sonra hazırlanacaq olan).
+Siz primary key üçün istifadə edilən sütun(lar)ı qərar verirməlisiniz.
+Qərar doğru olmaya bilər amma primary key`in bu xüsusiyyətləri olmalıdır:
+```Primary key`in dəyərləri unikal olmalıdır (yəni, bənzəri olmayan dəyər). Məsələn, customerName müştəilərin eyni adları ola biləcəyinə görə Müştəri cədvəli
+üçün primary key kimi istifadə etməyə uyğun olmaya bilər.
+```Primary key həmişə dəyər almalıdır. Başqa sözlə, NULL olmamalıdır.
 
+Primary key seçəndə aşağıdakıları nəzərdə tutmaq lazımdır:
+```
 
 
