@@ -25,3 +25,12 @@ Adding Events Handlers  :
 
 document.getElementById(id).onclick = function(){code}       ---- >	Adding event handler code to an onclick event
 ___________________________________________________________________________________________________________________________________
+var x=document
+
+document.anchors    --->  <a>      ////document.links     ----<a href>
+document.forms     ---->  <form>
+document.images     ----> <img>                  ///document.images.length--- how many images
+document.title     ---> <title>
+document.scripts      ----->   <script>
+
+ 
