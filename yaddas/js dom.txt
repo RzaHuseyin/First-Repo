@@ -1,0 +1,27 @@
+***********************************************************************************************************************************
+___________________________________________________________________________________________________________________________________
+```````````````````````````````````````````````````````````````````````````````````````````````````````````````````````````````````
+document.getElementById("demo").innerHTML = "Hello World!";  /////document.getElementsByTagName('p')[0].innerHTML = "Hello World!";
+```````````````````````````````````````````````````````````````````````````````````````````````````````````````````````````````````
+
+document.getElementById(id) /// document.getElementsByClassName(name)  ///document.getElementsByTagName(name)
+___________________________________________________________________________________________________________________________________
+Changing HTML Elements :
+
+element.innerHTML =  new html content //
+element.attribute = new value//
+element.setAttribute(attribute, value) //
+element.style.property = new style//
+___________________________________________________________________________________________________________________________________
+Adding and Deleting Elements  :
+
+document.createElement(element)//
+document.removeChild(element) //
+document.appendChild(element) //
+document.replaceChild(element)//
+document.write(text) //
+___________________________________________________________________________________________________________________________________
+Adding Events Handlers  :
+
+document.getElementById(id).onclick = function(){code}       ---- >	Adding event handler code to an onclick event
+___________________________________________________________________________________________________________________________________
