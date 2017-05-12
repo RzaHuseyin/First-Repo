@@ -1,0 +1,42 @@
+***********************************************************************************************************************************
+___________________________________________________________________________________________________________________________________
+```````````````````````````````````````````````````````````````````````````````````````````````````````````````````````````````````
+document.getElementById("demo").innerHTML = "Hello World!";  /////document.getElementsByTagName('p')[0].innerHTML = "Hello World!";
+```````````````````````````````````````````````````````````````````````````````````````````````````````````````````````````````````
+
+document.getElementById(id) /// document.getElementsByClassName(name)  ///document.getElementsByTagName(name)
+___________________________________________________________________________________________________________________________________
+Changing HTML Elements :
+
+element.innerHTML =  new html content //
+element.attribute = new value//
+element.setAttribute(attribute, value) //
+element.style.property = new style//
+___________________________________________________________________________________________________________________________________
+Adding and Deleting Elements  :
+
+document.createElement(element)//
+document.removeChild(element) //
+document.appendChild(element) //
+document.replaceChild(element)//
+document.write(text) //
+___________________________________________________________________________________________________________________________________
+Adding Events Handlers  :
+
+document.getElementById(id).onclick = function(){code}       ---- >	Adding event handler code to an onclick event
+___________________________________________________________________________________________________________________________________
+var x=document
+
+document.anchors    --->  <a>      ////document.links     ----<a href>
+document.forms     ---->  <form>
+document.images     ----> <img>                  ///document.images.length--- how many images
+document.title     ---> <title>
+document.scripts      ----->   <script>
+___________________________________________________________________________________________________________________________________
+element.cloneNode()                ---->         clones an element and returns the resulting node.
+document.createElement(element)   --------->     creates a new element node. 
+document.createTextNode(text)    --------------> creates a new text node.
+element.appendChild(newNode)        -----------> adds a new child node to an element as the last child node.
+element.insertBefore(node1, node2)-------------> inserts node1 as a child before node2.
+
+ 
