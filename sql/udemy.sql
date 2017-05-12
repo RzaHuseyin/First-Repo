@@ -3,9 +3,9 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Apr 28, 2017 at 07:39 PM
+-- Generation Time: May 12, 2017 at 11:54 PM
 -- Server version: 10.1.21-MariaDB
--- PHP Version: 5.6.30
+-- PHP Version: 7.1.1
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET time_zone = "+00:00";
@@ -17,7 +17,7 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8mb4 */;
 
 --
--- Database: `udemy`
+-- Database: `udemyrmv`
 --
 
 -- --------------------------------------------------------
@@ -28,42 +28,22 @@ SET time_zone = "+00:00";
 
 CREATE TABLE `category` (
   `id` int(11) NOT NULL,
-  `Cat_Name` varchar(50) NOT NULL,
-  `level` int(20) NOT NULL
+  `name` varchar(50) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
 -- Dumping data for table `category`
 --
 
-INSERT INTO `category` (`id`, `Cat_Name`, `level`) VALUES
-(1, 'Development', 0),
-(2, 'Business', 0),
-(3, 'IT & Software', 0),
-(4, 'Office Productivity', 0),
-(5, 'Personal Development', 0),
-(6, 'Design', 0),
-(7, 'Marketing', 0),
-(8, 'Lifestyle', 0),
-(9, 'Photography', 0),
-(10, 'Health&Fitness', 0),
-(11, 'Teacher Traninig', 0),
-(12, 'All development', 1),
-(13, 'Web development', 1),
-(14, 'Mobile apps', 1),
-(15, 'Programing language', 1),
-(16, 'Game development', 1),
-(17, 'Finance', 2),
-(18, 'Sales', 2),
-(19, 'Strategy', 2),
-(20, 'Operatinons', 2),
-(21, 'IT certfication', 2),
-(22, 'Hardware', 3),
-(23, 'Microsoft', 3),
-(24, 'Apple', 3),
-(25, 'Google', 3),
-(26, 'Operating system', 3),
-(27, 'Oracle', 4);
+INSERT INTO `category` (`id`, `name`) VALUES
+(1, 'Development'),
+(2, 'Business'),
+(3, 'ItSoftware'),
+(4, 'Office productivity'),
+(5, 'Personal Development'),
+(6, 'Design'),
+(7, 'Marketing'),
+(8, 'Lifestyle');
 
 -- --------------------------------------------------------
 
@@ -73,63 +53,94 @@ INSERT INTO `category` (`id`, `Cat_Name`, `level`) VALUES
 
 CREATE TABLE `comment` (
   `id` int(11) NOT NULL,
-  `User_id` int(11) NOT NULL,
-  `Commentary_Text` text NOT NULL
+  `comment_text` varchar(50) DEFAULT NULL,
+  `user_id` int(11) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `comment`
+--
+
+INSERT INTO `comment` (`id`, `comment_text`, `user_id`) VALUES
+(2, '0', 1);
 
 -- --------------------------------------------------------
 
 --
--- Table structure for table `courses`
+-- Table structure for table `course`
 --
 
-CREATE TABLE `courses` (
+CREATE TABLE `course` (
   `id` int(11) NOT NULL,
-  `title` varchar(50) NOT NULL,
-  `Name` varchar(50) NOT NULL,
-  `Price_ID` int(11) NOT NULL,
-  `Description` text NOT NULL,
-  `AddDate` datetime NOT NULL,
-  `UpDate` datetime NOT NULL,
-  `requirements` text NOT NULL,
-  `Features` varchar(50) NOT NULL,
-  `Language_id` int(11) NOT NULL,
-  `CatName_id` int(11) NOT NULL,
-  `User_id` int(11) NOT NULL,
-  `comment_lists_id` int(11) NOT NULL,
-  `View_id` int(11) NOT NULL,
-  `Editor_id` int(11) NOT NULL,
-  `Instructor_id` int(11) NOT NULL,
-  `CuriculumForCourse_id` int(11) NOT NULL,
-  `MediaFile_id` int(11) NOT NULL,
-  `rating_id` int(11) NOT NULL,
-  `enrolled` int(11) NOT NULL,
-  `access mobile&TV` tinyint(1) NOT NULL,
-  `cerfficate` tinyint(1) NOT NULL
+  `title` varchar(50) DEFAULT NULL,
+  `name` text,
+  `price_ID` int(11) DEFAULT NULL,
+  `description` text,
+  `adddate` datetime DEFAULT NULL,
+  `update` datetime DEFAULT NULL,
+  `requiement` text,
+  `feature` text,
+  `language_ID` int(11) DEFAULT NULL,
+  `category_ID` int(11) NOT NULL,
+  `subcategory_ID` int(11) DEFAULT NULL,
+  `user_ID` int(11) DEFAULT NULL,
+  `comment_ID` int(11) DEFAULT NULL,
+  `view_ID` int(11) DEFAULT NULL,
+  `editor_ID` int(11) DEFAULT NULL,
+  `instructor_ID` int(11) DEFAULT NULL,
+  `curiculum_ID` int(11) DEFAULT NULL,
+  `mediafile_ID` int(11) DEFAULT NULL,
+  `rating_ID` int(11) DEFAULT NULL,
+  `access_mobil_TV` tinyint(1) DEFAULT NULL,
+  `certificate` tinyint(1) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `course`
+--
+
+INSERT INTO `course` (`id`, `title`, `name`, `price_ID`, `description`, `adddate`, `update`, `requiement`, `feature`, `language_ID`, `category_ID`, `subcategory_ID`, `user_ID`, `comment_ID`, `view_ID`, `editor_ID`, `instructor_ID`, `curiculum_ID`, `mediafile_ID`, `rating_ID`, `access_mobil_TV`, `certificate`) VALUES
+(1, 'The Web Developer Bootcamp', 'The only course you need to learn web development - HTML, CSS, JS, Node, and More!', 1, 'Hi! Welcome to the Web Developer Bootcamp, the only course you need to learn web development. There are a lot of options for online developer training, but this course is without a doubt the most comprehensive and effective on the market. Here\'s why:\r\n\r\nThis is the only online course taught by a professional bootcamp instructor.\r\n94% of my bootcamp students go on to get full-time developer jobs. Most of them are complete beginners when I start working with them.\r\nThe previous 2 bootcamp programs that I taught cost $14,000 and $21,000. This course is just as comprehensive but with brand new content for a fraction of the price.', '2017-05-12 00:00:00', '2017-05-13 00:00:00', 'Have a computer with Internet\r\nBe ready to learn an insane amount of awesome stuff\r\nPrepare to build real web apps!\r\nBrace yourself for stupid jokes about my dog Rusty', 'Make REAL web applications using cutting-edge technologies\r\nContinue to learn and grow as a developer, long after the course ends\r\nCreate a blog application from scratch using Express, MongoDB, and Semantic ', 1, 1, 6, 1, 2, 1, 1, 2, 1, 1, 1, 1, 1);
 
 -- --------------------------------------------------------
 
 --
--- Table structure for table `curiculumcourse`
+-- Table structure for table `curiculum`
 --
 
-CREATE TABLE `curiculumcourse` (
+CREATE TABLE `curiculum` (
   `id` int(11) NOT NULL,
-  `introduction` text NOT NULL,
-  `plan_id` int(11) NOT NULL
+  `introduction` text,
+  `plan_ID` int(11) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Dumping data for table `curiculumcourse`
+-- Dumping data for table `curiculum`
 --
 
-INSERT INTO `curiculumcourse` (`id`, `introduction`, `plan_id`) VALUES
-(1, 'Setup', 1),
-(2, 'First Steps', 2),
-(3, 'Expressions, Statements, Code blocks, Methods and more', 3),
-(4, 'Classes, Constructors and Inheritance', 6),
-(5, 'Abstract Classes & Interfaces', 5);
+INSERT INTO `curiculum` (`id`, `introduction`, `plan_ID`) VALUES
+(1, 'Intermediate CSS', 1),
+(2, 'Creating a Tic Tac Toe Board', 2),
+(3, 'Introduction to JavaScript', 3),
+(4, 'Bootstrap', 4);
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `download`
+--
+
+CREATE TABLE `download` (
+  `id` int(11) NOT NULL,
+  `count` int(11) DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `download`
+--
+
+INSERT INTO `download` (`id`, `count`) VALUES
+(1, 0);
 
 -- --------------------------------------------------------
 
@@ -139,27 +150,21 @@ INSERT INTO `curiculumcourse` (`id`, `introduction`, `plan_id`) VALUES
 
 CREATE TABLE `editor` (
   `id` int(11) NOT NULL,
-  `Name` varchar(50) NOT NULL,
-  `Surname` varchar(50) NOT NULL,
-  `Password` varchar(50) NOT NULL,
-  `Phone` varchar(50) NOT NULL,
-  `E-mail` varchar(50) NOT NULL,
-  `Address` varchar(50) NOT NULL,
-  `AddDate` datetime NOT NULL
+  `name` varchar(50) DEFAULT NULL,
+  `surname` varchar(50) DEFAULT NULL,
+  `password` varchar(50) DEFAULT NULL,
+  `phone` varchar(50) DEFAULT NULL,
+  `address` text,
+  `email` text,
+  `adddate` datetime DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
 -- Dumping data for table `editor`
 --
 
-INSERT INTO `editor` (`id`, `Name`, `Surname`, `Password`, `Phone`, `E-mail`, `Address`, `AddDate`) VALUES
-(1, 'Con ', 'Bon', '456456', '0154684', 'asds@asd.com', 'asdasd242', '2016-03-15 02:10:13'),
-(2, 'Ted', 'Bon', '54654', '564564', 'sadasd@csa.com', 'asdsfdga', '2017-04-10 12:13:31'),
-(3, 'Maxililian', 'Schwarz', '5461324', '324134', 'sdfs@cvmnn.com', 'assdf54361', '2015-10-14 06:30:25'),
-(4, 'Alan', 'Jarvis', '21545', '65462357', 'asdfs@sad.az', 'asd36', '2016-12-14 10:25:25'),
-(5, 'Jeri', 'Hill', '521475132', '3453434', 'fdhvbh@sds.as', 'sdf4554153', '2017-04-10 08:24:25'),
-(6, 'Henry', 'Edwards', '234234', '32453245', 'dfgtwerg@dsf.sdf', '234ref', '2001-11-28 09:21:26'),
-(7, 'Venessa', 'Van', '2345435', '34534534', 'dfvge@dfg.ss', 'aser453', '2003-04-09 08:18:00');
+INSERT INTO `editor` (`id`, `name`, `surname`, `password`, `phone`, `address`, `email`, `adddate`) VALUES
+(1, 'Con ', 'Bon', '61456245', '26545234645', 'asdcfcs45d6f4', 'a6s54das6d4', '2017-04-11 00:00:00');
 
 -- --------------------------------------------------------
 
@@ -169,24 +174,25 @@ INSERT INTO `editor` (`id`, `Name`, `Surname`, `Password`, `Phone`, `E-mail`, `A
 
 CREATE TABLE `instructor` (
   `id` int(11) NOT NULL,
-  `Adi` varchar(50) NOT NULL,
-  `rating_id` int(11) NOT NULL,
-  `reviews` int(11) NOT NULL,
-  `students` int(11) NOT NULL
+  `name` varchar(50) DEFAULT NULL,
+  `surname` varchar(50) DEFAULT NULL,
+  `password` varchar(50) DEFAULT NULL,
+  `phone` varchar(50) DEFAULT NULL,
+  `address` text,
+  `email` text,
+  `add_date` datetime DEFAULT NULL,
+  `view_ID` int(11) DEFAULT NULL,
+  `user_ID` int(11) DEFAULT NULL,
+  `rating_ID` int(11) DEFAULT NULL,
+  `comment_ID` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
 -- Dumping data for table `instructor`
 --
 
-INSERT INTO `instructor` (`id`, `Adi`, `rating_id`, `reviews`, `students`) VALUES
-(1, 'Keith', 4, 23423, 23),
-(2, 'Helen', 3, 6142, 22),
-(3, 'Ben', 5, 156, 33),
-(4, 'Jon', 3, 135, 99),
-(5, 'Keyt', 5, 3123, 6),
-(6, 'Holmes', 4, 5466, 102),
-(7, 'Sharlck', 4, 654, 36);
+INSERT INTO `instructor` (`id`, `name`, `surname`, `password`, `phone`, `address`, `email`, `add_date`, `view_ID`, `user_ID`, `rating_ID`, `comment_ID`) VALUES
+(2, 'Adam', 'Jarvis', '5157524', '24523445', 'dsacrfsfdxsd', 'sefc4sdf', '2017-05-01 00:00:00', 1, 1, 1, 2);
 
 -- --------------------------------------------------------
 
@@ -196,59 +202,36 @@ INSERT INTO `instructor` (`id`, `Adi`, `rating_id`, `reviews`, `students`) VALUE
 
 CREATE TABLE `language` (
   `id` int(11) NOT NULL,
-  `Choose_Language` varchar(50) NOT NULL,
-  `captions` varchar(50) NOT NULL
+  `name` varchar(50) DEFAULT NULL,
+  `captions` text
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
 -- Dumping data for table `language`
 --
 
-INSERT INTO `language` (`id`, `Choose_Language`, `captions`) VALUES
-(1, 'Turkish', 'English'),
-(2, 'Turkish', 'Russian'),
-(3, 'English', 'Turkish'),
-(4, 'Russian', 'Turkish'),
-(5, 'English', 'Russian'),
-(6, 'Russian', 'English'),
-(7, 'Arabic', 'Turkish'),
-(8, 'Arabic', 'French'),
-(9, 'Russian', 'Arabic'),
-(10, 'Arabic', 'Russian'),
-(11, 'Arabic', 'Latin'),
-(12, 'Russian', 'French'),
-(13, 'Arabic', 'Azerbaijani'),
-(14, 'French', 'Azerbaijani'),
-(15, 'Russian', 'Azerbaijani');
+INSERT INTO `language` (`id`, `name`, `captions`) VALUES
+(1, '0', '0');
 
 -- --------------------------------------------------------
 
 --
--- Table structure for table `mediafiles`
+-- Table structure for table `mediafile`
 --
 
-CREATE TABLE `mediafiles` (
+CREATE TABLE `mediafile` (
   `id` int(11) NOT NULL,
-  `name` varchar(50) NOT NULL,
-  `type` varchar(50) NOT NULL,
-  `cover_foto` varchar(50) NOT NULL
+  `name` varchar(50) DEFAULT NULL,
+  `type` varchar(50) DEFAULT NULL,
+  `cover_photo` varchar(50) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Dumping data for table `mediafiles`
+-- Dumping data for table `mediafile`
 --
 
-INSERT INTO `mediafiles` (`id`, `name`, `type`, `cover_foto`) VALUES
-(1, 'Video1', 'mp4', 'foto1'),
-(2, 'Video1', 'mp4', 'foto2'),
-(3, 'Video1', 'mp4', 'foti5'),
-(4, 'Video1', 'mp4', 'foto 3'),
-(5, 'text1', 'txt', 'foto 4'),
-(6, 'text2', 'txt', 'foto 3'),
-(7, 'text3', 'txt', 'foto 3'),
-(8, 'Sound2', 'mp3', 'foto 3'),
-(9, 'Sound4', 'mp3', 'foto 6'),
-(10, 'Sound5', 'mp3', 'foto 5');
+INSERT INTO `mediafile` (`id`, `name`, `type`, `cover_photo`) VALUES
+(1, '0', '0', '0');
 
 -- --------------------------------------------------------
 
@@ -258,9 +241,9 @@ INSERT INTO `mediafiles` (`id`, `name`, `type`, `cover_foto`) VALUES
 
 CREATE TABLE `plan` (
   `id` int(11) NOT NULL,
-  `name` varchar(50) NOT NULL,
-  `description` text NOT NULL,
-  `time` time NOT NULL
+  `name` varchar(50) DEFAULT NULL,
+  `description` text,
+  `time` time DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
@@ -268,12 +251,10 @@ CREATE TABLE `plan` (
 --
 
 INSERT INTO `plan` (`id`, `name`, `description`, `time`) VALUES
-(1, 'How to Use This Section Of The Course', 'In this video we will go through an overview of the Java Development Kit (JDK) and IntelliJ, the Integrated Development Environment (IDE) we are using in the course.\r\n', '09:25:25'),
-(2, 'First Steps', 'An introduction to this section on downloading and installing the tools for Java development.', '00:09:23'),
-(3, 'Variables, Datatypes and Operators', 'In this video we will be talking about the most common data types use in Java which are the primitive data types. We will focus on byte, short, int and long. You will learn how to declare and use these, and what they are used for, and the range of values you can store in them. Finally, you will get to test your new found knowledge with a challenge at the end.', '00:03:25'),
-(4, 'Expressions, Statements, Code blocks', 'An introduction to this section of the course dealing with Expressions, Statements, Code blocks and Methods.', '08:03:36'),
-(5, 'Control Flow Statements', 'Get the basic understanding on what this section will cover with regards to Control Flow Statments', '08:03:00'),
-(6, 'Classes, Constructors and Inheritance', 'An introduction to this section of the course dealing with Object Oriented Programming, specifically, Classes, Objects, Constructors and Inheritance.', '00:16:22');
+(1, 'HTML Basics', '\r\nIntroduction to MDN', '01:12:11'),
+(2, 'HTML Boilerplate and Comments', 'HTML Boilerplate and Comments\r\n09:42\r\nBasic Tags', '00:09:42'),
+(3, ' HTML Lists', 'HTML Lists Assignment  HTML Lists Assignment: SOLUTION', '00:08:11'),
+(4, 'Text and Fonts', 'More Text and Fonts\r\nNote about Google Fonts', '00:07:13');
 
 -- --------------------------------------------------------
 
@@ -283,9 +264,9 @@ INSERT INTO `plan` (`id`, `name`, `description`, `time`) VALUES
 
 CREATE TABLE `price` (
   `id` int(11) NOT NULL,
-  `price` int(50) NOT NULL,
-  `free` tinyint(1) NOT NULL,
-  `discount` tinyint(1) NOT NULL
+  `price` int(11) DEFAULT NULL,
+  `free` tinyint(1) DEFAULT NULL,
+  `discount` tinyint(1) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
@@ -293,20 +274,7 @@ CREATE TABLE `price` (
 --
 
 INSERT INTO `price` (`id`, `price`, `free`, `discount`) VALUES
-(1, 56, 0, 0),
-(2, 32, 0, 0),
-(3, 34, 0, 0),
-(4, 543, 0, 0),
-(5, 34, 0, 0),
-(6, 534, 0, 0),
-(7, 545, 0, 0),
-(8, 0, 1, 0),
-(9, 0, 1, 0),
-(10, 343, 0, 36),
-(11, 233, 0, 50),
-(12, 654, 0, 60),
-(13, 65, 0, 20),
-(14, 645, 0, 33);
+(1, 0, 0, 0);
 
 -- --------------------------------------------------------
 
@@ -316,109 +284,94 @@ INSERT INTO `price` (`id`, `price`, `free`, `discount`) VALUES
 
 CREATE TABLE `rating` (
   `id` int(11) NOT NULL,
-  `count` int(30) NOT NULL
+  `avg_count` int(11) DEFAULT NULL,
+  `user_ID` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
 -- Dumping data for table `rating`
 --
 
-INSERT INTO `rating` (`id`, `count`) VALUES
-(1, 5),
-(2, 4),
-(3, 4),
-(4, 4),
-(5, 5),
-(6, 2),
-(7, 3),
-(8, 3),
-(9, 2),
-(10, 3);
+INSERT INTO `rating` (`id`, `avg_count`, `user_ID`) VALUES
+(1, 0, 0);
 
 -- --------------------------------------------------------
 
 --
--- Table structure for table `users`
+-- Table structure for table `subcategory`
 --
 
-CREATE TABLE `users` (
+CREATE TABLE `subcategory` (
   `id` int(11) NOT NULL,
-  `Name` varchar(50) NOT NULL,
-  `Surname` varchar(50) NOT NULL,
-  `Phone` varchar(50) NOT NULL,
-  `E-mail` varchar(50) NOT NULL,
-  `Address` varchar(50) NOT NULL,
-  `Password` varchar(50) NOT NULL,
-  `AddDate` datetime NOT NULL,
-  `download_id` int(11) NOT NULL,
-  `view_id` int(11) NOT NULL
+  `name` varchar(50) DEFAULT NULL,
+  `category_ID` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Dumping data for table `users`
+-- Dumping data for table `subcategory`
 --
 
-INSERT INTO `users` (`id`, `Name`, `Surname`, `Phone`, `E-mail`, `Address`, `Password`, `AddDate`, `download_id`, `view_id`) VALUES
-(7, 'Ahmed', 'Baba', '3146343', 'asdasd@asd.a', 'sadas4d45a', '331687', '2011-04-11 06:17:20', 5, 1),
-(8, 'Fehle', 'Baba', '9644554', 'sdssdf@sdf.com', 'asf978', '63456', '2010-03-11 00:59:00', 5, 2),
-(9, 'Sahmar', 'Oruclu', '6872643', 'sdfsdf@gmail.com', 'sdf879', 'sd6f879', '2013-04-02 00:00:00', 7, 2),
-(10, 'Surxay', 'Balayev', '97864531', 'asdasd.box.az', 'awd6879aw', 'as5d5ad', '2011-04-10 00:00:00', 8, 1),
-(11, 'Medine', 'Hesenova', '654689', 'asdasd@asdad.com', 'asd789a', 'sdf456sd4f`', '2017-04-11 00:00:00', 4, 1),
-(12, 'Zulfiye', 'Mescidova', '6263', 'asdasd@asd.cds', 'asdasd56', 'asd46as6d', '2017-04-18 09:24:24', 4, 2),
-(13, 'Sehribanu', 'Mamedova', '6843456', 'asdsad@asd.ad', 'asdasd96', 'asd45as', '2017-04-09 07:19:21', 4, 2),
-(14, 'Ferhad', 'Taqiyev', '6874633', 'asdasd@adsd.cs', 'as6d4', 'as6d45sa5d', '2014-04-10 08:44:53', 5, 1),
-(15, 'Sahib', 'Qarayev', '987645', 'ljkhkd@cddf.cf', 'sadf9879', '9876451', '2017-04-05 10:22:23', 4, 2),
-(16, 'Tebriz', 'Babayev', '8787964532', 'sadff@asd.com', 'asdf987', '9879645', '2009-04-05 12:33:32', 1, 1);
+INSERT INTO `subcategory` (`id`, `name`, `category_ID`) VALUES
+(6, 'All Development', 1),
+(7, 'Web Development', 1),
+(8, 'Mobile Apps', 1),
+(9, 'Programming Languages`', 1),
+(10, 'Game Development', 1),
+(11, 'Databases', 1),
+(12, 'Software', 1),
+(13, 'Finance', 2),
+(14, 'Sales', 2),
+(15, 'IT cerfitication', 3),
+(16, 'Hardware', 3),
+(17, 'Microsoft', 4),
+(18, 'Apple', 4),
+(19, 'Google', 4),
+(20, 'Productivity', 5);
 
 -- --------------------------------------------------------
 
 --
--- Table structure for table `user_download_lists`
+-- Table structure for table `user`
 --
 
-CREATE TABLE `user_download_lists` (
+CREATE TABLE `user` (
   `id` int(11) NOT NULL,
-  `Yukleme_sayi` int(11) NOT NULL
+  `name` varchar(50) DEFAULT NULL,
+  `surname` varchar(50) DEFAULT NULL,
+  `password` varchar(50) DEFAULT NULL,
+  `phone` varchar(50) DEFAULT NULL,
+  `address` text,
+  `email` text,
+  `add_date` datetime DEFAULT NULL,
+  `download_ID` int(11) DEFAULT NULL,
+  `view_ID` int(11) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Dumping data for table `user_download_lists`
+-- Dumping data for table `user`
 --
 
-INSERT INTO `user_download_lists` (`id`, `Yukleme_sayi`) VALUES
-(1, 234),
-(2, 234),
-(3, 4234),
-(4, 23),
-(5, 23423),
-(6, 324),
-(7, 567),
-(8, 5675);
+INSERT INTO `user` (`id`, `name`, `surname`, `password`, `phone`, `address`, `email`, `add_date`, `download_ID`, `view_ID`) VALUES
+(1, 'Baba', 'Babayev', '20888846', '0515605650', 'Ismayilli. R.Soltanov kuc. ev 36', 'rzah1998@gmail.com', '2017-05-01 18:11:16', NULL, 1);
 
 -- --------------------------------------------------------
 
 --
--- Table structure for table `views`
+-- Table structure for table `view`
 --
 
-CREATE TABLE `views` (
+CREATE TABLE `view` (
   `id` int(11) NOT NULL,
-  `views` int(11) NOT NULL,
-  `set_views` tinyint(1) NOT NULL
+  `count` int(11) DEFAULT NULL,
+  `set_view` tinyint(1) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Dumping data for table `views`
+-- Dumping data for table `view`
 --
 
-INSERT INTO `views` (`id`, `views`, `set_views`) VALUES
-(1, 232, 0),
-(2, 123, 0),
-(3, 324, 1),
-(4, 234234, 1),
-(5, 234, 1),
-(6, 4353, 0),
-(7, 3423, 0);
+INSERT INTO `view` (`id`, `count`, `set_view`) VALUES
+(1, 0, 0);
 
 --
 -- Indexes for dumped tables
@@ -434,31 +387,39 @@ ALTER TABLE `category`
 -- Indexes for table `comment`
 --
 ALTER TABLE `comment`
+  ADD PRIMARY KEY (`id`),
+  ADD KEY `user_id` (`user_id`);
+
+--
+-- Indexes for table `course`
+--
+ALTER TABLE `course`
+  ADD PRIMARY KEY (`id`),
+  ADD KEY `price_ID` (`price_ID`,`language_ID`,`subcategory_ID`,`user_ID`,`comment_ID`,`view_ID`,`editor_ID`,`instructor_ID`,`curiculum_ID`,`mediafile_ID`,`rating_ID`),
+  ADD KEY `language_ID` (`language_ID`),
+  ADD KEY `subcategory_ID` (`subcategory_ID`),
+  ADD KEY `view_ID` (`view_ID`),
+  ADD KEY `user_ID` (`user_ID`),
+  ADD KEY `instructor_ID` (`instructor_ID`),
+  ADD KEY `rating_ID` (`rating_ID`),
+  ADD KEY `comment_ID` (`comment_ID`),
+  ADD KEY `mediafile_ID` (`mediafile_ID`),
+  ADD KEY `curiculum_ID` (`curiculum_ID`),
+  ADD KEY `editor_ID` (`editor_ID`),
+  ADD KEY `category_ID` (`category_ID`);
+
+--
+-- Indexes for table `curiculum`
+--
+ALTER TABLE `curiculum`
+  ADD PRIMARY KEY (`id`),
+  ADD KEY `plan_ID` (`plan_ID`);
+
+--
+-- Indexes for table `download`
+--
+ALTER TABLE `download`
   ADD PRIMARY KEY (`id`);
-
---
--- Indexes for table `courses`
---
-ALTER TABLE `courses`
-  ADD PRIMARY KEY (`id`),
-  ADD KEY `Courses_fk0` (`Price_ID`),
-  ADD KEY `Courses_fk1` (`Language_id`),
-  ADD KEY `Courses_fk3` (`CatName_id`),
-  ADD KEY `Courses_fk4` (`User_id`),
-  ADD KEY `Courses_fk5` (`comment_lists_id`),
-  ADD KEY `Courses_fk6` (`View_id`),
-  ADD KEY `Courses_fk7` (`Editor_id`),
-  ADD KEY `Courses_fk8` (`Instructor_id`),
-  ADD KEY `Courses_fk9` (`CuriculumForCourse_id`),
-  ADD KEY `Courses_fk10` (`MediaFile_id`),
-  ADD KEY `Courses_fk11` (`rating_id`);
-
---
--- Indexes for table `curiculumcourse`
---
-ALTER TABLE `curiculumcourse`
-  ADD PRIMARY KEY (`id`),
-  ADD KEY `plan_id` (`plan_id`);
 
 --
 -- Indexes for table `editor`
@@ -471,7 +432,10 @@ ALTER TABLE `editor`
 --
 ALTER TABLE `instructor`
   ADD PRIMARY KEY (`id`),
-  ADD KEY `rating_id` (`rating_id`);
+  ADD KEY `view_ID` (`view_ID`,`user_ID`,`rating_ID`,`comment_ID`),
+  ADD KEY `rating_ID` (`rating_ID`),
+  ADD KEY `comment_ID` (`comment_ID`),
+  ADD KEY `user_ID` (`user_ID`);
 
 --
 -- Indexes for table `language`
@@ -480,9 +444,9 @@ ALTER TABLE `language`
   ADD PRIMARY KEY (`id`);
 
 --
--- Indexes for table `mediafiles`
+-- Indexes for table `mediafile`
 --
-ALTER TABLE `mediafiles`
+ALTER TABLE `mediafile`
   ADD PRIMARY KEY (`id`);
 
 --
@@ -501,26 +465,28 @@ ALTER TABLE `price`
 -- Indexes for table `rating`
 --
 ALTER TABLE `rating`
-  ADD PRIMARY KEY (`id`);
-
---
--- Indexes for table `users`
---
-ALTER TABLE `users`
   ADD PRIMARY KEY (`id`),
-  ADD KEY `download_id` (`download_id`),
-  ADD KEY `view_id` (`view_id`);
+  ADD KEY `user_ID` (`user_ID`);
 
 --
--- Indexes for table `user_download_lists`
+-- Indexes for table `subcategory`
 --
-ALTER TABLE `user_download_lists`
-  ADD PRIMARY KEY (`id`);
+ALTER TABLE `subcategory`
+  ADD PRIMARY KEY (`id`),
+  ADD KEY `category_ID` (`category_ID`);
 
 --
--- Indexes for table `views`
+-- Indexes for table `user`
 --
-ALTER TABLE `views`
+ALTER TABLE `user`
+  ADD PRIMARY KEY (`id`),
+  ADD KEY `download_ID` (`download_ID`,`view_ID`),
+  ADD KEY `view_ID` (`view_ID`);
+
+--
+-- Indexes for table `view`
+--
+ALTER TABLE `view`
   ADD PRIMARY KEY (`id`);
 
 --
@@ -531,105 +497,131 @@ ALTER TABLE `views`
 -- AUTO_INCREMENT for table `category`
 --
 ALTER TABLE `category`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=28;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
 --
 -- AUTO_INCREMENT for table `comment`
 --
 ALTER TABLE `comment`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 --
--- AUTO_INCREMENT for table `curiculumcourse`
+-- AUTO_INCREMENT for table `course`
 --
-ALTER TABLE `curiculumcourse`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+ALTER TABLE `course`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+--
+-- AUTO_INCREMENT for table `curiculum`
+--
+ALTER TABLE `curiculum`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+--
+-- AUTO_INCREMENT for table `download`
+--
+ALTER TABLE `download`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 --
 -- AUTO_INCREMENT for table `editor`
 --
 ALTER TABLE `editor`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 --
 -- AUTO_INCREMENT for table `instructor`
 --
 ALTER TABLE `instructor`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 --
 -- AUTO_INCREMENT for table `language`
 --
 ALTER TABLE `language`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=16;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 --
--- AUTO_INCREMENT for table `mediafiles`
+-- AUTO_INCREMENT for table `mediafile`
 --
-ALTER TABLE `mediafiles`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
+ALTER TABLE `mediafile`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 --
 -- AUTO_INCREMENT for table `plan`
 --
 ALTER TABLE `plan`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 --
 -- AUTO_INCREMENT for table `price`
 --
 ALTER TABLE `price`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=15;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 --
 -- AUTO_INCREMENT for table `rating`
 --
 ALTER TABLE `rating`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 --
--- AUTO_INCREMENT for table `users`
+-- AUTO_INCREMENT for table `subcategory`
 --
-ALTER TABLE `users`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=17;
+ALTER TABLE `subcategory`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=21;
 --
--- AUTO_INCREMENT for table `user_download_lists`
+-- AUTO_INCREMENT for table `user`
 --
-ALTER TABLE `user_download_lists`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
+ALTER TABLE `user`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 --
--- AUTO_INCREMENT for table `views`
+-- AUTO_INCREMENT for table `view`
 --
-ALTER TABLE `views`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
+ALTER TABLE `view`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 --
 -- Constraints for dumped tables
 --
 
 --
--- Constraints for table `courses`
+-- Constraints for table `comment`
 --
-ALTER TABLE `courses`
-  ADD CONSTRAINT `courses_ibfk_1` FOREIGN KEY (`Price_ID`) REFERENCES `price` (`id`) ON DELETE CASCADE ON UPDATE CASCADE,
-  ADD CONSTRAINT `courses_ibfk_12` FOREIGN KEY (`Language_id`) REFERENCES `language` (`id`) ON DELETE CASCADE ON UPDATE CASCADE,
-  ADD CONSTRAINT `courses_ibfk_13` FOREIGN KEY (`CuriculumForCourse_id`) REFERENCES `curiculumcourse` (`id`) ON DELETE CASCADE ON UPDATE CASCADE,
-  ADD CONSTRAINT `courses_ibfk_14` FOREIGN KEY (`comment_lists_id`) REFERENCES `comment` (`id`) ON DELETE NO ACTION ON UPDATE CASCADE,
-  ADD CONSTRAINT `courses_ibfk_15` FOREIGN KEY (`Editor_id`) REFERENCES `editor` (`id`) ON DELETE NO ACTION ON UPDATE CASCADE,
-  ADD CONSTRAINT `courses_ibfk_16` FOREIGN KEY (`rating_id`) REFERENCES `rating` (`id`) ON DELETE NO ACTION ON UPDATE CASCADE,
-  ADD CONSTRAINT `courses_ibfk_17` FOREIGN KEY (`View_id`) REFERENCES `views` (`id`) ON DELETE NO ACTION ON UPDATE CASCADE,
-  ADD CONSTRAINT `courses_ibfk_18` FOREIGN KEY (`User_id`) REFERENCES `users` (`id`) ON DELETE NO ACTION ON UPDATE CASCADE,
-  ADD CONSTRAINT `courses_ibfk_3` FOREIGN KEY (`CatName_id`) REFERENCES `category` (`id`) ON DELETE CASCADE ON UPDATE CASCADE,
-  ADD CONSTRAINT `courses_ibfk_5` FOREIGN KEY (`Instructor_id`) REFERENCES `instructor` (`id`) ON DELETE CASCADE ON UPDATE CASCADE,
-  ADD CONSTRAINT `courses_ibfk_6` FOREIGN KEY (`MediaFile_id`) REFERENCES `mediafiles` (`id`) ON DELETE CASCADE ON UPDATE CASCADE;
+ALTER TABLE `comment`
+  ADD CONSTRAINT `comment_ibfk_1` FOREIGN KEY (`user_id`) REFERENCES `user` (`id`);
 
 --
--- Constraints for table `curiculumcourse`
+-- Constraints for table `course`
 --
-ALTER TABLE `curiculumcourse`
-  ADD CONSTRAINT `curiculumcourse_ibfk_1` FOREIGN KEY (`plan_id`) REFERENCES `plan` (`id`) ON DELETE CASCADE ON UPDATE CASCADE;
+ALTER TABLE `course`
+  ADD CONSTRAINT `course_ibfk_1` FOREIGN KEY (`price_ID`) REFERENCES `price` (`id`) ON DELETE NO ACTION ON UPDATE NO ACTION,
+  ADD CONSTRAINT `course_ibfk_10` FOREIGN KEY (`curiculum_ID`) REFERENCES `curiculum` (`id`) ON DELETE NO ACTION ON UPDATE NO ACTION,
+  ADD CONSTRAINT `course_ibfk_11` FOREIGN KEY (`editor_ID`) REFERENCES `editor` (`id`) ON DELETE NO ACTION ON UPDATE NO ACTION,
+  ADD CONSTRAINT `course_ibfk_12` FOREIGN KEY (`category_ID`) REFERENCES `category` (`id`) ON DELETE NO ACTION ON UPDATE NO ACTION,
+  ADD CONSTRAINT `course_ibfk_2` FOREIGN KEY (`language_ID`) REFERENCES `language` (`id`) ON DELETE NO ACTION ON UPDATE NO ACTION,
+  ADD CONSTRAINT `course_ibfk_3` FOREIGN KEY (`subcategory_ID`) REFERENCES `subcategory` (`id`) ON DELETE NO ACTION ON UPDATE NO ACTION,
+  ADD CONSTRAINT `course_ibfk_4` FOREIGN KEY (`view_ID`) REFERENCES `view` (`id`) ON DELETE NO ACTION ON UPDATE NO ACTION,
+  ADD CONSTRAINT `course_ibfk_5` FOREIGN KEY (`user_ID`) REFERENCES `user` (`id`) ON DELETE NO ACTION ON UPDATE NO ACTION,
+  ADD CONSTRAINT `course_ibfk_6` FOREIGN KEY (`instructor_ID`) REFERENCES `instructor` (`id`) ON DELETE NO ACTION ON UPDATE NO ACTION,
+  ADD CONSTRAINT `course_ibfk_7` FOREIGN KEY (`rating_ID`) REFERENCES `rating` (`id`) ON DELETE NO ACTION ON UPDATE NO ACTION,
+  ADD CONSTRAINT `course_ibfk_8` FOREIGN KEY (`comment_ID`) REFERENCES `comment` (`id`) ON DELETE NO ACTION ON UPDATE NO ACTION,
+  ADD CONSTRAINT `course_ibfk_9` FOREIGN KEY (`mediafile_ID`) REFERENCES `mediafile` (`id`) ON DELETE NO ACTION ON UPDATE NO ACTION;
+
+--
+-- Constraints for table `curiculum`
+--
+ALTER TABLE `curiculum`
+  ADD CONSTRAINT `curiculum_ibfk_1` FOREIGN KEY (`plan_ID`) REFERENCES `plan` (`id`) ON DELETE NO ACTION ON UPDATE NO ACTION;
 
 --
 -- Constraints for table `instructor`
 --
 ALTER TABLE `instructor`
-  ADD CONSTRAINT `instructor_ibfk_1` FOREIGN KEY (`rating_id`) REFERENCES `rating` (`id`) ON DELETE NO ACTION ON UPDATE CASCADE;
+  ADD CONSTRAINT `instructor_ibfk_1` FOREIGN KEY (`rating_ID`) REFERENCES `rating` (`id`) ON DELETE NO ACTION ON UPDATE NO ACTION,
+  ADD CONSTRAINT `instructor_ibfk_2` FOREIGN KEY (`comment_ID`) REFERENCES `comment` (`id`) ON DELETE NO ACTION ON UPDATE NO ACTION,
+  ADD CONSTRAINT `instructor_ibfk_3` FOREIGN KEY (`view_ID`) REFERENCES `view` (`id`) ON DELETE NO ACTION ON UPDATE NO ACTION,
+  ADD CONSTRAINT `instructor_ibfk_4` FOREIGN KEY (`user_ID`) REFERENCES `user` (`id`) ON DELETE NO ACTION ON UPDATE NO ACTION;
 
 --
--- Constraints for table `users`
+-- Constraints for table `subcategory`
 --
-ALTER TABLE `users`
-  ADD CONSTRAINT `users_ibfk_1` FOREIGN KEY (`download_id`) REFERENCES `user_download_lists` (`id`) ON DELETE CASCADE ON UPDATE CASCADE,
-  ADD CONSTRAINT `users_ibfk_2` FOREIGN KEY (`view_id`) REFERENCES `views` (`id`) ON DELETE NO ACTION ON UPDATE CASCADE;
+ALTER TABLE `subcategory`
+  ADD CONSTRAINT `subcategory_ibfk_1` FOREIGN KEY (`category_ID`) REFERENCES `category` (`id`) ON DELETE NO ACTION ON UPDATE NO ACTION;
+
+--
+-- Constraints for table `user`
+--
+ALTER TABLE `user`
+  ADD CONSTRAINT `user_ibfk_1` FOREIGN KEY (`download_ID`) REFERENCES `download` (`id`) ON DELETE NO ACTION ON UPDATE NO ACTION,
+  ADD CONSTRAINT `user_ibfk_2` FOREIGN KEY (`view_ID`) REFERENCES `view` (`id`) ON DELETE NO ACTION ON UPDATE NO ACTION;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
