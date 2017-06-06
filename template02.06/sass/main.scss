@@ -1,0 +1,59 @@
+$colorRed:#E04622;
+
+.largwidth{
+	width:100%;
+	height:700px;
+}
+
+.largwidthimg{
+	width:100%;
+	height:1000px;
+}
+
+
+.carousel{
+	.item{
+		div{
+			margin: 0px 0px 80px 500px;
+			padding: 0px;
+			font-weight: 300;
+			width: 400px;
+    		font-size: 24px;
+		}
+		&:nth-child(1){
+			background-position:center;
+			background-size:cover;
+		
+			width: 100%;
+			height: 700px;
+			background-image: url("../img/slides/slide-construction-1.jpg")
+	}
+		&:nth-child(2){
+			background-position:center;
+			background-size:cover;
+			width: 100%;
+			height: 700px;
+			background-image: url("../img/slides/slide-construction-2.jpg")
+	}
+
+
+
+}
+	a{
+		width: 40px;
+		height: 40px;
+		margin: 350px 30px 0px 30px;
+  		transform: rotate(45deg);
+  		&:hover{
+  			background-color:black;
+  		}
+  		span{
+  			transform: rotate(-45deg);
+  			font-weight:100;
+		}
+  		
+		
+	}
+
+}
+
