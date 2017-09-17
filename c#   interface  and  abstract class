@@ -1,0 +1,128 @@
+    ~~Abstract class  - bir neçə class-da oxşar olan methodları bir class-da yığmaq üçün istifadə olunur və həmin class-ı oxşar olan 
+class-lar üçün "base" class təyin edirik. Abstract class-dan obyekt almaq olmur, yalnız miras almaq üçün istifadə olunur. Yəni biz onu
+digər classlara base (valideyin) class olması üçün təyin edirik.  
+ Classlarda istifadə etdiyimiz oxşar methodları bir abstract class-a yığırıq və tamamlanmayan methodları abstract method kimi
+təyin edirik ki, miras alan class-da (derived class) override edək. 
+ -Abstract method - yalnız abstract class-ın methodu kimi təyin olunur. və derived class-larda override olunmalıdır.Heç vaxt
+ private təyin edilməz.
+ 
+    Interface- class deyildir. interface sözü ilə təyin olunan , heç bir tətbiqi olmayan, derived class-lar tərəfindən
+override olunmalı "abstract methodlar" toplusudur.Yəni tamamiylə abstract methodlardan ibarət olan bir abstract class-a bənzəyir.
+
+
+
+Fərləri və oxşarlıqları:
+
+  ~C#-da class-ın birdən çox varislik almağı mümkün deyil. beləliklə interface köməyə gəlir. 
+biz istifadə edəcəyimiz methodlari abstract class-a yığmaq əvəzinə interface-ə yığırıq. və yeni class-larimiza bol-bol  
+varislik ötürə bilirk.
+  Lakin interface özündə tam bir method tətbiq edə bilmir, yalnız abstract methodlradan ibarətdir. Yəni özündə olan hər method
+public olmalıdır və derived class-da overrayda ehtiyacı var. Abstract class isə özündə tam bir funksiya yerinə yetirən methodları
+saxlaya bilər. 
+   İnterface-də  derived class-lardan alınan obyektlərin xüsusiyətlərinin eyni olmağına ehtiyac yoxdur. zatən override edəcəyik. yəni
+adam obyekti alacağımız derived class-la  ağac obyekti alacağımız derived class eyni interface-dən varislik ala bilər. Abstract 
+classda isə xüsusiyətlər eyni olmalıdır. yəni adam obyekti alacağımız class-ın ağac obyekti alacağımız class-la eyni bir abstract 
+class-dan varislik almağı  məntiqəuyğun deyi(ya da mümkün deyil).
+
+Müxtəlif class-lar yalnız methodları eynidirsə, interface-dən istifadə etmək daha məsləhətlidir. Amma xüsusiyyətləri ( məsələn 
+properties) eynidirsə abstract class-dan istifadə edilməlidir.  Amma derived class-lar üçün abstract class təyin etmək interface
+təyin etməkdən dəfələrlə asandır( oxşar property-lər və method-ları axtarıb tapıb təyin etmək cəhətdən).
+
+İnterface-ə yeni metod əlavə ediriksə, bütün derived class-lı tapmaq, onlarda həmin methoda uyğun dəyişikliklər etmək lazımdır ,amma
+abstract class-da buna ehtiyac yoxdur, əgər methodumuzu düzgün təyin etsək derived class-lar düzgün işləyəcəklər.
+
+Yuxarıda yazdıqlarımızdan belə başa düşürük ki , interface-də heç bir field təyin edilə bilməz. Amma əksinə abstract class-da
+istənilən qədər.
+
+
+namespace AbstractsANDInterfaces
+{
+    public abstract class Employee                           |   public interface IEmployee
+    {                                                        |   { 
+        protected String firstName;                          |
+        protected String lastName;                           |   public abstract String FirstName  
+                                                             |   {    
+        public abstract String FirstName                     |      get; 
+        {                                                    |      set;  
+            get;                                             |   } 
+            set;                                             |
+        }                                                    |
+        public abstract String LastName                      |   public abstract String LastName  
+        {                                                    |   {
+            get;                                             |      get;
+            set;                                             |      set;
+        }                                                    |    }
+         public String Update()                              |   
+        {                                                    |    String Update();
+            return "Employee " + " " +                       |    String Add();
+                      firstName + " " + lastName +           |    String Delete();
+                      " updated";                            |   
+        }                                                    |
+         public String Add()                                 |
+        {                                                    |
+            return "Employee " + " " +                       |
+                      firstName + " " + lastName +           |
+                      " added";                              |
+        }                                                    |
+         public String Delete()                              |
+        {                                                    |
+            return "Employee " + " " +                       |
+                      firstName + " " + lastName +           |
+                      " deleted";                            |
+        }                                                    |
+                                                             |
+     }                                                       |
+     
+     
+     
+     ***************************DERİVED CLASS-larda ABSTRACT CLASS-ın və INTERFACE-nin tətbiqi  (Inherited )***************
+     
+     
+ public  class Employee1:Employee                            |   public class Employee2:IEmployee
+    {                                                        |   { 
+        public Employee1()                                   |     protected String firstName;
+        {                                                    |     protected String lastName; 
+        }                                                    |     public Employee2()    
+        public override String FirstName                     |     {
+        {                                                    |     }
+            get                                              |     public override String FirstName 
+                                                             |     {
+            {                                                |         get
+                return firstName;                            |         {
+            }                                                |            return firstName;
+            set                                              |          }
+            {                                                |         set
+                firstName = value;                           |         {
+            }                                                |            firstName=value;
+        }                                                    |          }
+         public override String LastName                     |       }
+        {                                                    |     public override String LastName 
+            get                                              |     {    
+                                                             |        get   
+            {                                                |        {   
+                return lastName;                             |            return lastName;  
+            }                                                |         }  
+            set                                              |        set  
+            {                                                |        {  
+                lastName = value;                            |           lastName = value;     
+            }                                                |         }   
+        }                                                    |       }  
+         public String Update()                              |     public String Update()
+        {                                                    |    {
+            return base.Update();                            |       return "Fulltime Employee " +  firstName + " ubdated.";
+        }                                                    |     }
+         public new String Add()                             |
+        {                                                    |    public String Add()
+            return base.Add();                               |    {
+        }                                                    |        return "Fulltime Employee " +  firstName + " added.";
+         public new String Delete()                          |      }
+        {                                                    |     public String Delete()
+            return base.Delete();                            |     {
+        }                                                    |        return "Fulltime Employee " +  firstName + " deleted.";
+                                                             |     }
+     }                                                       |
+     
+     
+     
+     
+     
