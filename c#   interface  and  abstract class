@@ -11,13 +11,13 @@ override olunmalı "abstract methodlar" toplusudur.Yəni tamamiylə abstract met
 
 
 
-Fərləri və oxşarlıqları:
+Fərqləri və oxşarlıqları:
 
   ~C#-da class-ın birdən çox varislik almağı mümkün deyil. beləliklə interface köməyə gəlir. 
 biz istifadə edəcəyimiz methodlari abstract class-a yığmaq əvəzinə interface-ə yığırıq. və yeni class-larimiza bol-bol  
 varislik ötürə bilirk.
   Lakin interface özündə tam bir method tətbiq edə bilmir, yalnız abstract methodlradan ibarətdir. Yəni özündə olan hər method
-public olmalıdır və derived class-da overrayda ehtiyacı var. Abstract class isə özündə tam bir funksiya yerinə yetirən methodları
+public olmalıdır və derived class-da override ehtiyacı var. Abstract class isə özündə tam bir funksiya yerinə yetirən methodları
 saxlaya bilər. 
    İnterface-də  derived class-lardan alınan obyektlərin xüsusiyətlərinin eyni olmağına ehtiyac yoxdur. zatən override edəcəyik. yəni
 adam obyekti alacağımız derived class-la  ağac obyekti alacağımız derived class eyni interface-dən varislik ala bilər. Abstract 
