@@ -1,7 +1,7 @@
     ~~Abstract class  - bir neçə class-da oxşar olan methodları bir class-da yığmaq üçün istifadə olunur və həmin class-ı oxşar olan 
 class-lar üçün "base" class təyin edirik. Abstract class-dan obyekt almaq olmur, yalnız miras almaq üçün istifadə olunur. Yəni biz onu
 digər classlara base (valideyin) class olması üçün təyin edirik.  
- Classlarda istifadə etdiyimiz oxşar methodları bir abstract class-a yığırıq və tamamlanmayan methodları abstract method kimi
+ Classlarda istifadə etdiyimiz oxşar field və  methodları  bir abstract class-a yığırıq və tamamlanmayan methodları abstract method kimi
 təyin edirik ki, miras alan class-da (derived class) override edək. 
  -Abstract method - yalnız abstract class-ın methodu kimi təyin olunur. və derived class-larda override olunmalıdır.Heç vaxt
  private təyin edilməz.
