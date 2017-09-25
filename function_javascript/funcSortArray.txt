@@ -1,0 +1,64 @@
+// menim qurduqum siralam alqoritmi
+var myArry = [0,1,9,6,3,8,4,1,2,3,2,2];
+
+function fanc (){
+	
+	var count=1;
+
+	while(count>0){
+
+		console.log(count)
+
+        count=0;
+
+        var a=0;
+
+        for(var i =0; i<myArry.length-1; i++){
+
+            if(myArry[i]>myArry[i+1]){
+
+                a=myArry[i];
+
+                myArry[i]=myArry[i+1]
+
+                myArry[i+1]=a;
+
+                ++count;
+
+            }
+
+        }
+
+    }
+
+}
+
+//Jon Von Neumann'in  siralama alqoritmi
+
+function fa (){
+	var count=1;
+
+        var a=0;
+
+        for(var i =0; i<myArry.length-1; i++){
+
+            if(myArry[i]>myArry[i+1]){
+
+                a=myArry[i];
+
+                myArry[i]=myArry[i+1]
+ 
+                myArry[i+1]=a;
+
+                i=-1;
+
+            }
+
+    }
+
+}
+
+
+bir satici 1 olkede 30 ferqli sehere getmelidir ve sonda geri qayitmalidir.
+Seherlerden herbirinden digerine yol var.
+En qisa yolu tapma algoritmi tapmaq. 
